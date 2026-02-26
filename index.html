@@ -13,13 +13,13 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: #0a0a14;
             color: #fff;
         }
 
         header {
             background: linear-gradient(90deg, #1a1a2e 0%, #0f3460 100%);
-            padding: 20px 0;
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -27,21 +27,15 @@
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
         }
 
         .logo img {
-            height: 60px;
+            height: 50px;
             object-fit: contain;
         }
 
@@ -54,61 +48,61 @@
         nav a {
             color: #00D4FF;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         nav a:hover {
             color: #FF1493;
-            text-shadow: 0 0 10px #FF1493;
         }
 
         .cart-icon {
-            background: linear-gradient(135deg, #FF1493, #FFA500);
-            padding: 8px 15px;
-            border-radius: 20px;
+            background: linear-gradient(90deg, #FF1493, #FFA500);
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
         }
 
         .cart-icon:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .hero {
-            background: linear-gradient(135deg, #00D4FF20 0%, #FF149320 100%);
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #FF149330 0%, #FFA50030 50%, #00D4FF30 100%);
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 2px solid #00D4FF;
+            border-bottom: 3px solid #FF1493;
         }
 
         .hero h1 {
             font-size: 48px;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #00D4FF, #FF1493);
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00D4FF, #FF1493, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: bold;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             color: #FFA500;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .cta-button {
             display: inline-block;
             background: linear-gradient(90deg, #FF1493, #FFA500);
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
+            padding: 12px 40px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         .cta-button:hover {
@@ -119,132 +113,114 @@
         .section-title {
             text-align: center;
             font-size: 36px;
-            margin: 50px 0 40px 0;
-            background: linear-gradient(90deg, #00D4FF, #FF1493);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin: 50px 0 30px 0;
+            color: #FF1493;
+            font-weight: bold;
         }
 
-        .filter-section {
-            max-width: 1200px;
-            margin: 0 auto 40px;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 0 20px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .filter-group label {
-            color: #00D4FF;
-            font-weight: bold;
-        }
-
-        select, input {
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: 2px solid #00D4FF;
-            background: #1a1a2e;
-            color: #00D4FF;
-            font-weight: bold;
         }
 
         .product-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 50px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
         .product-card {
-            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            background: #1a1a2e;
             border: 2px solid #00D4FF;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: all 0.3s;
             cursor: pointer;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
             border-color: #FF1493;
         }
 
         .product-image {
             width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #00D4FF20, #FF149320);
+            height: 280px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: #FFA500;
             overflow: hidden;
+            position: relative;
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
 
         .product-info {
-            padding: 20px;
+            padding: 15px;
         }
 
         .product-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #00D4FF;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            min-height: 40px;
         }
 
         .product-price {
-            font-size: 24px;
+            font-size: 22px;
             color: #FFA500;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .size-color-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .size-color-group label {
             display: block;
             color: #FF1493;
-            font-size: 12px;
-            margin-bottom: 5px;
+            font-size: 11px;
+            margin-bottom: 4px;
             font-weight: bold;
         }
 
         .size-color-group select {
             width: 100%;
-            padding: 8px;
+            padding: 6px;
             border-radius: 5px;
             border: 1px solid #FF1493;
+            background: #0f3460;
+            color: #00D4FF;
+            font-size: 12px;
         }
 
         .add-to-cart {
             width: 100%;
             background: linear-gradient(90deg, #00D4FF, #FF1493);
             color: white;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 14px;
+            margin-top: 8px;
         }
 
         .add-to-cart:hover {
@@ -259,19 +235,18 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: auto;
         }
 
         .modal-content {
             background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-            margin: 5% auto;
+            margin: 40px auto;
             padding: 30px;
             border: 2px solid #00D4FF;
-            border-radius: 15px;
+            border-radius: 12px;
             width: 90%;
-            max-width: 800px;
-            max-height: 80vh;
-            overflow-y: auto;
+            max-width: 600px;
         }
 
         .close {
@@ -292,7 +267,7 @@
 
         .cart-item {
             background: #1a1a2e;
-            padding: 15px;
+            padding: 12px;
             margin: 10px 0;
             border-left: 4px solid #FF1493;
             border-radius: 5px;
@@ -305,9 +280,10 @@
             background: #FF1493;
             color: white;
             border: none;
-            padding: 5px 15px;
+            padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 12px;
         }
 
         .cart-total {
@@ -322,27 +298,32 @@
             width: 100%;
             background: linear-gradient(90deg, #FF1493, #FFA500);
             color: white;
-            padding: 15px;
+            padding: 12px;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             font-size: 16px;
             margin-top: 10px;
         }
 
+        .checkout-button:hover {
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+        }
+
         .contact-section {
             background: linear-gradient(135deg, #FF149320 0%, #FFA50020 100%);
-            padding: 40px 20px;
+            padding: 50px 20px;
             margin: 50px 0;
-            border-radius: 15px;
+            border: 2px solid #FF1493;
+            border-radius: 12px;
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -350,38 +331,53 @@
             background: #1a1a2e;
             padding: 25px;
             border-radius: 10px;
-            border-left: 4px solid #00D4FF;
+            border-left: 5px solid #00D4FF;
         }
 
         .contact-box h3 {
             color: #FF1493;
             margin-bottom: 15px;
+            font-size: 18px;
         }
 
         .contact-box p {
             color: #FFA500;
             line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .phone-reveal {
+            cursor: pointer;
+            color: #00D4FF;
+            text-decoration: underline;
+            padding: 10px 0;
         }
 
         footer {
             background: #0a0a14;
             text-align: center;
             padding: 30px 20px;
-            border-top: 2px solid #00D4FF;
+            border-top: 2px solid #FF1493;
             color: #FFA500;
+            font-size: 14px;
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
-            }
-
             .hero h1 {
                 font-size: 32px;
             }
 
             .product-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+            nav ul {
+                gap: 15px;
             }
         }
     </style>
@@ -403,48 +399,19 @@
     </header>
 
     <section class="hero">
-        <h1>REAL TIME PUSH GARMENTS</h1>
+        <h1>🚀 REAL TIME PUSH GARMENTS 🚀</h1>
         <p>Clothed With Strength - Proverbs 31:25</p>
-        <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+        <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Collection</button>
     </section>
 
-    <section id="products">
-        <h2 class="section-title">OUR COLLECTION</h2>
-        
-        <div class="filter-section">
-            <div class="filter-group">
-                <label>Size:</label>
-                <select id="sizeFilter">
-                    <option value="">All Sizes</option>
-                    <option value="S">Small (S)</option>
-                    <option value="M">Medium (M)</option>
-                    <option value="L">Large (L)</option>
-                    <option value="XL">Extra Large (XL)</option>
-                    <option value="2XL">2XL</option>
-                    <option value="3XL">3XL</option>
-                    <option value="4XL">4XL</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Color:</label>
-                <select id="colorFilter">
-                    <option value="">All Colors</option>
-                    <option value="Black">Black</option>
-                    <option value="White">White</option>
-                    <option value="Navy">Navy</option>
-                    <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Green">Green</option>
-                    <option value="Gray">Gray</option>
-                </select>
-            </div>
-        </div>
+    <section id="products" class="container">
+        <h2 class="section-title">OUR PRODUCTS</h2>
 
         <div class="product-grid">
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image1.png" alt="Product 1">
+                    <img src="image1.png" alt="Product 1" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 1%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 1</div>
@@ -452,7 +419,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -465,7 +432,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="Black">Black</option>
                             <option value="White">White</option>
                             <option value="Navy">Navy</option>
@@ -480,7 +447,7 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image2.png" alt="Product 2">
+                    <img src="image2.png" alt="Product 2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 2%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 2</div>
@@ -488,7 +455,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -501,7 +468,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Navy">Navy</option>
@@ -515,7 +482,7 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image3.png" alt="Product 3">
+                    <img src="image3.png" alt="Product 3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 3%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 3</div>
@@ -523,7 +490,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -536,7 +503,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Navy">Navy</option>
@@ -550,7 +517,7 @@
             <!-- Product 4 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image4.png" alt="Product 4">
+                    <img src="image4.png" alt="Product 4" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 4%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 4</div>
@@ -558,7 +525,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -571,7 +538,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="Black">Black</option>
                             <option value="White">White</option>
                             <option value="Navy">Navy</option>
@@ -585,7 +552,7 @@
             <!-- Product 5 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image5.png" alt="Product 5">
+                    <img src="image5.png" alt="Product 5" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 5%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 5</div>
@@ -593,7 +560,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -606,7 +573,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="Black">Black</option>
                             <option value="White">White</option>
                             <option value="Navy">Navy</option>
@@ -620,7 +587,7 @@
             <!-- Product 6 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image6.png" alt="Product 6">
+                    <img src="image6.png" alt="Product 6" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 6%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 6</div>
@@ -628,7 +595,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -641,7 +608,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Gray">Gray</option>
@@ -655,7 +622,7 @@
             <!-- Product 7 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image7.png" alt="Product 7">
+                    <img src="image7.png" alt="Product 7" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 7%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 7</div>
@@ -663,7 +630,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -676,7 +643,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="Black">Black</option>
                             <option value="White">White</option>
                             <option value="Red">Red</option>
@@ -690,7 +657,7 @@
             <!-- Product 8 -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="image8.png" alt="Product 8">
+                    <img src="image8.png" alt="Product 8" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22250%22 height=%22280%22%3E%3Crect fill=%22%231a1a2e%22 width=%22250%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2216%22 fill=%22%23FFA500%22%3EProduct 8%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="product-info">
                     <div class="product-name">Product 8</div>
@@ -698,7 +665,7 @@
                     <div class="size-color-group">
                         <label>Size</label>
                         <select>
-                            <option value="">Select Size</option>
+                            <option>Select Size</option>
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -711,7 +678,7 @@
                     <div class="size-color-group">
                         <label>Color</label>
                         <select>
-                            <option value="">Select Color</option>
+                            <option>Select Color</option>
                             <option value="White">White</option>
                             <option value="Black">Black</option>
                             <option value="Navy">Navy</option>
@@ -725,19 +692,25 @@
     </section>
 
     <section class="contact-section" id="contact">
-        <h2 class="section-title">CONTACT & PAYMENT</h2>
-        <div class="contact-container">
-            <div class="contact-box">
-                <h3>📍 Shop Locations</h3>
-                <p><strong>Location 1:</strong><br>NUST UNIVERSITY<br>OLD MUTUAL ACCOMMODATION<br>SHOP 7</p>
-                <p style="margin-top: 15px;"><strong>Location 2:</strong><br>NKULUMANE COMPLEX<br>SHOP 27A</p>
-            </div>
-            <div class="contact-box">
-                <h3>💳 Payment Method</h3>
-                <p><strong>Ecocash Payment</strong></p>
-                <p style="cursor: pointer; color: #00D4FF;" onclick="showPhoneNumber()">📞 Click to reveal number</p>
-                <p id="phone-number" style="display: none; color: #FF1493; font-weight: bold;">+263 778314185<br><span style="font-size: 14px; color: #FFA500;">Thandolwenkoski Memeza Ndhlovu</span></p>
-                <p style="margin-top: 15px; font-size: 14px; color: #FFA500;">All items: <strong>$15 each</strong></p>
+        <div class="container">
+            <h2 class="section-title">CONTACT & PAYMENT</h2>
+            <div class="contact-container">
+                <div class="contact-box">
+                    <h3>📍 Shop Locations</h3>
+                    <p><strong>Location 1:</strong><br>NUST UNIVERSITY<br>OLD MUTUAL ACCOMMODATION<br>SHOP 7</p>
+                    <p style="margin-top: 15px;"><strong>Location 2:</strong><br>NKULUMANE COMPLEX<br>SHOP 27A</p>
+                </div>
+                <div class="contact-box">
+                    <h3>💳 Payment Method</h3>
+                    <p><strong>Ecocash Payment</strong></p>
+                    <p class="phone-reveal" onclick="showPhoneNumber()">📞 Click to reveal Ecocash number</p>
+                    <p id="phone-number" style="display: none; color: #FF1493; font-weight: bold; margin-top: 10px;">+263 778314185<br><span style="font-size: 12px; color: #FFA500;">Thandolwenkoski Memeza Ndhlovu</span></p>
+                    <p style="margin-top: 15px; font-size: 13px;">All items: <strong>$15 each</strong></p>
+                </div>
+                <div class="contact-box">
+                    <h3>📋 How to Order</h3>
+                    <p>1️⃣ Browse products<br>2️⃣ Select size & color<br>3️⃣ Add to cart<br>4️⃣ Checkout<br>5️⃣ Make Ecocash payment<br>6️⃣ Collect from shop</p>
+                </div>
             </div>
         </div>
     </section>
@@ -746,11 +719,11 @@
     <div id="cartModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeCart()">&times;</span>
-            <h2 style="color: #00D4FF; margin-bottom: 20px;">🛒 Your Shopping Cart</h2>
+            <h2 style="color: #FF1493; margin-bottom: 20px;">🛒 YOUR CART</h2>
             <div id="cartItems" class="cart-items"></div>
-            <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
-            <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
-            <button class="checkout-button" style="background: #666;" onclick="clearCart()">Clear Cart</button>
+            <div class="cart-total">TOTAL: $<span id="cartTotal">0.00</span></div>
+            <button class="checkout-button" onclick="checkout()">✅ CHECKOUT</button>
+            <button class="checkout-button" style="background: #666; margin-top: 8px;" onclick="clearCart()">🗑️ CLEAR CART</button>
         </div>
     </div>
 
@@ -824,31 +797,26 @@
             }
 
             let total = cart.reduce((sum, item) => sum + item.price, 0);
-            let orderSummary = 'ORDER SUMMARY:\n\n';
+            let orderSummary = '✅ ORDER SUMMARY:\n\n';
             cart.forEach(item => {
                 orderSummary += `- ${item.name}: $${item.price}\n`;
             });
-            orderSummary += `\nTotal: $${total.toFixed(2)}\n\n`;
-            orderSummary += 'PAYMENT METHOD: Ecocash\n';
-            orderSummary += 'Click "Reveal Number" on Contact section to see payment details\n\n';
-            orderSummary += 'Thank you for your order!';
+            orderSummary += `\n💰 TOTAL: $${total.toFixed(2)}\n\n`;
+            orderSummary += '💳 PAYMENT: Ecocash\n';
+            orderSummary += 'Check Contact section for details\n\n';
+            orderSummary += '📍 PICKUP: Visit any of our locations';
 
             alert(orderSummary);
             
-            console.log('Order placed:', cart);
             cart = [];
             updateCartCount();
             closeCart();
-            alert('✅ Order placed successfully! Seller will contact you shortly.');
+            alert('✅ Order placed! Seller will contact you shortly.');
         }
 
         function showPhoneNumber() {
             const phoneElement = document.getElementById('phone-number');
             phoneElement.style.display = phoneElement.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function updateProduct(element, productName) {
-            console.log('Updated:', productName);
         }
 
         window.addEventListener('load', () => {
