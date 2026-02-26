@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Push Garments - Clothed With Strength</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a1a2e 0%, #0f3460 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00D4FF, #FF1493, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #00D4FF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF1493;
+            text-shadow: 0 0 10px #FF1493;
+        }
+
+        .cart-icon {
+            background: linear-gradient(135deg, #FF1493, #FFA500);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00D4FF20 0%, #FF149320 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid #00D4FF;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00D4FF, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #FFA500;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #FF1493, #FFA500);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin: 50px 0 40px 0;
+            background: linear-gradient(90deg, #00D4FF, #FF1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .filter-section {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-group label {
+            color: #00D4FF;
+            font-weight: bold;
+        }
+
+        select, input {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid #00D4FF;
+            background: #1a1a2e;
+            color: #00D4FF;
+            font-weight: bold;
+        }
+
+        .product-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            border: 2px solid #00D4FF;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+            border-color: #FF1493;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #00D4FF20, #FF149320);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #FFA500;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00D4FF;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #FFA500;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .size-color-group {
+            margin-bottom: 15px;
+        }
+
+        .size-color-group label {
+            display: block;
+            color: #FF1493;
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .size-color-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #FF1493;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: linear-gradient(90deg, #00D4FF, #FF1493);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: linear-gradient(90deg, #FF1493, #FFA500);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            margin: 5% auto;
+            padding: 30px;
+            border: 2px solid #00D4FF;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #FF1493;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #FFA500;
+        }
+
+        .cart-items {
+            margin: 20px 0;
+        }
+
+        .cart-item {
+            background: #1a1a2e;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #FF1493;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item button {
+            background: #FF1493;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFA500;
+            margin: 20px 0;
+            text-align: right;
+        }
+
+        .checkout-button {
+            width: 100%;
+            background: linear-gradient(90deg, #FF1493, #FFA500);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #FF149320 0%, #FFA50020 100%);
+            padding: 40px 20px;
+            margin: 50px 0;
+            border-radius: 15px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-box {
+            background: #1a1a2e;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #00D4FF;
+        }
+
+        .contact-box h3 {
+            color: #FF1493;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #FFA500;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #0a0a14;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid #00D4FF;
+            color: #FFA500;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">🚀 REAL TIME PUSH</div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="openCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>REAL TIME PUSH GARMENTS</h1>
+        <p>Clothed With Strength - Proverbs 31:25</p>
+        <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">OUR COLLECTION</h2>
+        
+        <div class="filter-section">
+            <div class="filter-group">
+                <label>Size:</label>
+                <select id="sizeFilter">
+                    <option value="">All Sizes</option>
+                    <option value="S">Small (S)</option>
+                    <option value="M">Medium (M)</option>
+                    <option value="L">Large (L)</option>
+                    <option value="XL">Extra Large (XL)</option>
+                    <option value="2XL">2XL</option>
+                    <option value="3XL">3XL</option>
+                    <option value="4XL">4XL</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Color:</label>
+                <select id="colorFilter">
+                    <option value="">All Colors</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Navy">Navy</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Gray">Gray</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">Too Busy to Pray (Black)</div>
+                <div class="product-info">
+                    <div class="product-name">Too Busy to Pray</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 1')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 1')">
+                            <option value="">Select Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Red">Red</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Too Busy to Pray', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">Luke 18:1 (White)</div>
+                <div class="product-info">
+                    <div class="product-name">Luke 18:1</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 2')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 2')">
+                            <option value="">Select Color</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Gray">Gray</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Luke 18:1', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">Satan Cannot Get You (White)</div>
+                <div class="product-info">
+                    <div class="product-name">Satan Cannot Get You</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 3')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 3')">
+                            <option value="">Select Color</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Gray">Gray</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Satan Cannot Get You', 15)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">CONTACT & PAYMENT</h2>
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3>📍 Shop Locations</h3>
+                <p><strong>Location 1:</strong><br>NUST UNIVERSITY<br>OLD MUTUAL ACCOMMODATION<br>SHOP 7</p>
+                <p style="margin-top: 15px;"><strong>Location 2:</strong><br>NKULUMANE COMPLEX<br>SHOP 27A</p>
+            </div>
+            <div class="contact-box">
+                <h3>💳 Payment Method</h3>
+                <p><strong>Ecocash Payment</strong></p>
+                <p style="cursor: pointer; color: #00D4FF;" onclick="showPhoneNumber()">📞 Click to reveal number</p>
+                <p id="phone-number" style="display: none; color: #FF1493; font-weight: bold;">+263 778314185<br><span style="font-size: 14px; color: #FFA500;">Thandolwenkoski Memeza Ndhlovu</span></p>
+                <p style="margin-top: 15px; font-size: 14px; color: #FFA500;">All items: <strong>$15 each</strong></p>
+            </div>
+            <div class="contact-box">
+                <h3>📋 How to Order</h3>
+                <p>1. Select your product, size & color<br>2. Add to cart<br>3. Review your order<br>4. Make payment via Ecocash<br>5. Pick up at your nearest location</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2 style="color: #00D4FF; margin-bottom: 20px;">🛒 Your Shopping Cart</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+            <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+            <button class="checkout-button" style="background: #666; margin-top: 10px;" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Real Time Push Garments. Clothed With Strength - Proverbs 31:25</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price, id: Date.now() });
+            updateCartCount();
+            alert('✅ ' + productName + ' added to cart!');
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function openCart() {
+            displayCart();
+            document.getElementById('cartModal').style.display = 'block';
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function displayCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p style="color: #FFA500; text-align: center;">Your cart is empty</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    cartItemsDiv.innerHTML += `
+                        <div class="cart-item">
+                            <span>${item.name} - $${item.price.toFixed(2)}</span>
+                            <button onclick="removeFromCart(${index})">Remove</button>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById('cartTotal').textContent = total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartCount();
+            displayCart();
+        }
+
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                cart = [];
+                updateCartCount();
+                displayCart();
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('❌ Your cart is empty!');
+                return;
+            }
+
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            let orderSummary = 'ORDER SUMMARY:\n\n';
+            cart.forEach(item => {
+                orderSummary += `- ${item.name}: $${item.price}\n`;
+            });
+            orderSummary += `\nTotal: $${total.toFixed(2)}\n\n`;
+            orderSummary += 'PAYMENT METHOD: Ecocash\n';
+            orderSummary += 'Click "Reveal Number" on Contact section\n\n';
+            orderSummary += 'PICKUP LOCATIONS:\n';
+            orderSummary += '1. NUST University, Old Mutual Shop 7\n';
+            orderSummary += '2. Nkulumane Complex, Shop 27A';
+
+            alert(orderSummary);
+            
+            console.log('Order placed:', cart);
+            cart = [];
+            updateCartCount();
+            closeCart();
+            alert('✅ Order placed successfully! Seller will contact you shortly via Ecocash number.');
+        }
+
+        function showPhoneNumber() {
+            const phoneElement = document.getElementById('phone-number');
+            phoneElement.style.display = phoneElement.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function updateProduct(element, productName) {
+            console.log('Updated:', productName);
+        }
+
+        window.addEventListener('load', () => {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartCount();
+            }
+        });
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('cartModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
