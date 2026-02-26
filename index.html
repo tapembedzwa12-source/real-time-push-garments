@@ -38,10 +38,11 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            background: linear-gradient(90deg, #00D4FF, #FF1493, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        }
+
+        .logo img {
+            height: 60px;
+            object-fit: contain;
         }
 
         nav ul {
@@ -188,6 +189,13 @@
             justify-content: center;
             font-size: 14px;
             color: #FFA500;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-info {
@@ -320,6 +328,7 @@
             font-weight: bold;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 10px;
         }
 
         .contact-section {
@@ -380,7 +389,9 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">🚀 REAL TIME PUSH</div>
+            <div class="logo">
+                <img src="logo.png" alt="Real Time Push Garments Logo">
+            </div>
             <nav>
                 <ul>
                     <li><a href="#products">Products</a></li>
@@ -432,7 +443,9 @@
         <div class="product-grid">
             <!-- Product 1 -->
             <div class="product-card">
-                <div class="product-image">Too Busy to Pray (Black)</div>
+                <div class="product-image">
+                    <img src="image1.png" alt="Too Busy to Pray">
+                </div>
                 <div class="product-info">
                     <div class="product-name">Too Busy to Pray</div>
                     <div class="product-price">$15.00</div>
@@ -466,7 +479,9 @@
 
             <!-- Product 2 -->
             <div class="product-card">
-                <div class="product-image">Luke 18:1 (White)</div>
+                <div class="product-image">
+                    <img src="image2.png" alt="Luke 18:1">
+                </div>
                 <div class="product-info">
                     <div class="product-name">Luke 18:1</div>
                     <div class="product-price">$15.00</div>
@@ -499,7 +514,9 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <div class="product-image">Satan Cannot Get You (White)</div>
+                <div class="product-image">
+                    <img src="image3.png" alt="Satan Cannot Get You">
+                </div>
                 <div class="product-info">
                     <div class="product-name">Satan Cannot Get You</div>
                     <div class="product-price">$15.00</div>
@@ -529,6 +546,181 @@
                     <button class="add-to-cart" onclick="addToCart('Satan Cannot Get You', 15)">Add to Cart</button>
                 </div>
             </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image4.png" alt="Product 4">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 4</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 4')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 4')">
+                            <option value="">Select Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Red">Red</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Product 4', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image5.png" alt="Product 5">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 5</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 5')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 5')">
+                            <option value="">Select Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Product 5', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image6.png" alt="Product 6">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 6</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 6')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 6')">
+                            <option value="">Select Color</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Navy">Navy</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Product 6', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image7.png" alt="Product 7">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 7</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 7')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 7')">
+                            <option value="">Select Color</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Red">Red</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Product 7', 15)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="image8.png" alt="Product 8">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Product 8</div>
+                    <div class="product-price">$15.00</div>
+                    <div class="size-color-group">
+                        <label>Size</label>
+                        <select onchange="updateProduct(this, 'Product 8')">
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="3XL">3XL</option>
+                            <option value="4XL">4XL</option>
+                        </select>
+                    </div>
+                    <div class="size-color-group">
+                        <label>Color</label>
+                        <select onchange="updateProduct(this, 'Product 8')">
+                            <option value="">Select Color</option>
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Gray">Gray</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Product 8', 15)">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -547,10 +739,6 @@
                 <p id="phone-number" style="display: none; color: #FF1493; font-weight: bold;">+263 778314185<br><span style="font-size: 14px; color: #FFA500;">Thandolwenkoski Memeza Ndhlovu</span></p>
                 <p style="margin-top: 15px; font-size: 14px; color: #FFA500;">All items: <strong>$15 each</strong></p>
             </div>
-            <div class="contact-box">
-                <h3>📋 How to Order</h3>
-                <p>1. Select your product, size & color<br>2. Add to cart<br>3. Review your order<br>4. Make payment via Ecocash<br>5. Pick up at your nearest location</p>
-            </div>
         </div>
     </section>
 
@@ -562,7 +750,7 @@
             <div id="cartItems" class="cart-items"></div>
             <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
             <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
-            <button class="checkout-button" style="background: #666; margin-top: 10px;" onclick="clearCart()">Clear Cart</button>
+            <button class="checkout-button" style="background: #666;" onclick="clearCart()">Clear Cart</button>
         </div>
     </div>
 
@@ -642,10 +830,8 @@
             });
             orderSummary += `\nTotal: $${total.toFixed(2)}\n\n`;
             orderSummary += 'PAYMENT METHOD: Ecocash\n';
-            orderSummary += 'Click "Reveal Number" on Contact section\n\n';
-            orderSummary += 'PICKUP LOCATIONS:\n';
-            orderSummary += '1. NUST University, Old Mutual Shop 7\n';
-            orderSummary += '2. Nkulumane Complex, Shop 27A';
+            orderSummary += 'Click "Reveal Number" on Contact section to see payment details\n\n';
+            orderSummary += 'Thank you for your order!';
 
             alert(orderSummary);
             
@@ -653,7 +839,7 @@
             cart = [];
             updateCartCount();
             closeCart();
-            alert('✅ Order placed successfully! Seller will contact you shortly via Ecocash number.');
+            alert('✅ Order placed successfully! Seller will contact you shortly.');
         }
 
         function showPhoneNumber() {
